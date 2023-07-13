@@ -4,18 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.nanohealthtest.api.ProductsApi
-import com.example.nanohealthtest.model.Product
+import com.example.nanohealthtest.model.DomainProduct
+import com.example.nanohealthtest.usecases.ProductsUseCase
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class ProductsViewModel: ViewModel() {
     data class UiState(
-        val products: List<Product>
+        val domainProducts: List<DomainProduct>
     )
 
     private val _uiState = MutableLiveData(UiState(emptyList()))
@@ -23,8 +19,8 @@ class ProductsViewModel: ViewModel() {
 
     fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
-            val newProducts = ProductsApi.getProducts()
-            _uiState.postValue(_uiState.value?.copy(products = newProducts))
+            val newProducts = ProductsUseCase.fetchProducts()
+            _uiState.postValue(_uiState.value?.copy(domainProducts = newProducts))
         }
     }
 }
