@@ -5,4 +5,5 @@
     <string name="password">password</string>
     <string name="continue_button">continue</string>
     <string name="help_link">Need help?</string>
+    <string name="products">Products</string>
 </resources>
