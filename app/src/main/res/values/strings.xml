@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">NanoHealthTest</string>
+    <string name="log_in">Log In</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="continue_button">continue</string>
+    <string name="help_link">Need help?</string>
 </resources>
