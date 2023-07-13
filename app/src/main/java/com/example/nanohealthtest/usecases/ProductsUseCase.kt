@@ -2,13 +2,11 @@ package com.example.nanohealthtest.usecases
 
 import com.example.nanohealthtest.api.ProductsApi
 import com.example.nanohealthtest.mappers.ProductsMapper
-import com.example.nanohealthtest.model.DomainProduct
+import com.example.nanohealthtest.model.domain.DomainProduct
 
-class ProductsUseCase {
-    companion object {
-        suspend fun fetchProducts(): List<DomainProduct> {
-            val dataProducts = ProductsApi.getProducts()
-            return dataProducts.map { ProductsMapper.dataToDomain(it) }
-        }
+object ProductsUseCase {
+    suspend fun fetchProducts(): List<DomainProduct> {
+        val dataProducts = ProductsApi.getProducts()
+        return dataProducts.map { ProductsMapper.dataToDomain(it) }
     }
 }

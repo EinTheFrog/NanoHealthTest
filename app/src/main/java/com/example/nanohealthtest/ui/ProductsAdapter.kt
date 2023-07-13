@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nanohealthtest.R
-import com.example.nanohealthtest.model.DomainProduct
+import com.example.nanohealthtest.model.domain.DomainProduct
 
 class ProductsAdapter(private val productList: List<DomainProduct>):
     RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {

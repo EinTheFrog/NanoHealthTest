@@ -1,4 +1,4 @@
-package com.example.nanohealthtest.model
+package com.example.nanohealthtest.model.data
 
 data class DataProduct(
     val id: Long,

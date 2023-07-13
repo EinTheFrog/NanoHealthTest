@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nanohealthtest.databinding.FragmentProductsBinding
-import com.example.nanohealthtest.model.DomainProduct
+import com.example.nanohealthtest.model.domain.DomainProduct
 import com.example.nanohealthtest.ui.viewmodel.ProductsViewModel
 
 class ProductsFragment: Fragment() {

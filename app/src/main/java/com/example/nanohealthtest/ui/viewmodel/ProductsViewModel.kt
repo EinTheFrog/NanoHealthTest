@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.nanohealthtest.model.DomainProduct
+import com.example.nanohealthtest.model.domain.DomainProduct
 import com.example.nanohealthtest.usecases.ProductsUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -2,13 +2,12 @@ package com.example.nanohealthtest.mappers
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
-import com.example.nanohealthtest.model.DataProduct
-import com.example.nanohealthtest.model.DomainProduct
+import com.example.nanohealthtest.model.data.DataProduct
+import com.example.nanohealthtest.model.domain.DomainProduct
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
 import java.lang.Exception

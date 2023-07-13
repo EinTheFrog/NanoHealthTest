@@ -1,4 +1,4 @@
-package com.example.nanohealthtest.model
+package com.example.nanohealthtest.model.domain
 
 import android.graphics.Bitmap
 
