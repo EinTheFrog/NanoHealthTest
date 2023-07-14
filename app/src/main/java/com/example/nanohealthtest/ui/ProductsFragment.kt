@@ -23,24 +23,33 @@ class ProductsFragment: Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         val binding = FragmentProductsBinding.inflate(inflater)
 
-        val navController = findNavController()
-
         val dataProducts = mutableListOf<DomainProduct>()
-        val productsAdapter = ProductsAdapter(dataProducts, resources) { productId ->
-            val action = ProductsFragmentDirections.actionProductsFragmentToDetailsFragment(productId)
-            navController.navigate(action)
-        }
+        val productsAdapter = ProductsAdapter(dataProducts, resources, this::navigateToProductDetails)
         binding.productsRecycler.adapter = productsAdapter
         binding.productsRecycler.layoutManager = LinearLayoutManager(activity)
 
         val productsViewModel by activityViewModels<ProductsViewModel>()
         productsViewModel.fetchData()
+        setUiStateObserver(productsViewModel, dataProducts, productsAdapter)
+
+        return binding.root
+    }
+
+    private fun setUiStateObserver(
+        productsViewModel: ProductsViewModel,
+        dataProducts: MutableList<DomainProduct>,
+        productsAdapter: ProductsAdapter
+    ) {
         productsViewModel.uiState.observe(viewLifecycleOwner) { newUiState ->
             dataProducts.clear()
             dataProducts.addAll(newUiState.productList)
             productsAdapter.notifyDataSetChanged()
         }
+    }
 
-        return binding.root
+    private fun navigateToProductDetails(productId: Long) {
+        val navController = findNavController()
+        val action = ProductsFragmentDirections.actionProductsFragmentToDetailsFragment(productId)
+        navController.navigate(action)
     }
 }

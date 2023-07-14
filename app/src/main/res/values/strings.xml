@@ -9,6 +9,8 @@
     <string name="details">Details</string>
     <string name="order_button">Order Now</string>
     <string name="all_products_header">All Products</string>
+    <string name="price_in_aed">%1$.2f AED</string>
+    <string name="reviews_number">Reviews (%1$d)</string>
 
     // Content Descriptions
     <string name="share_button">Share button</string>

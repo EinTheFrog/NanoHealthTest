@@ -45,13 +45,15 @@ class ProductsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = productList[position]
+
         holder.nameView.text = product.name
         holder.descriptionView.text = product.description
         val priceInAED: Float = product.price / 100.0f
-        holder.priceView.text = "$priceInAED AED"
+        holder.priceView.text = resources.getString(R.string.price_in_aed, priceInAED)
         val rangedRating: Float = product.rating / 100.0f
         holder.ratingView.rating = rangedRating
         holder.imageView.background = BitmapDrawable(resources, product.image)
+
         holder.clickView.setOnClickListener {
             onProductClick(product.id)
         }
