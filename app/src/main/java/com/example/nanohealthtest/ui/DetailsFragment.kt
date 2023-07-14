@@ -30,10 +30,10 @@ class DetailsFragment: Fragment() {
 
         binding.productImage.background = BitmapDrawable(resources, product.largeImage)
         binding.productNameText.text = product.name
-        val priceInAED = product.price / 100
+        val priceInAED: Double = product.price / 100.0
         binding.priceText.text = "$priceInAED AED"
         binding.reviewsNumberText.text = "Reviews (${product.reviewsAmount})"
-        val rangedRating = product.rating / 100
+        val rangedRating: Double = product.rating / 100.0
         binding.ratingText.text = "$rangedRating/5.0"
 
         return binding.root

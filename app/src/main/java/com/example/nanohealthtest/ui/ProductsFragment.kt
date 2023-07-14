@@ -26,7 +26,7 @@ class ProductsFragment: Fragment() {
         val navController = findNavController()
 
         val dataProducts = mutableListOf<DomainProduct>()
-        val productsAdapter = ProductsAdapter(dataProducts) { productId ->
+        val productsAdapter = ProductsAdapter(dataProducts, resources) { productId ->
             val action = ProductsFragmentDirections.actionProductsFragmentToDetailsFragment(productId)
             navController.navigate(action)
         }
