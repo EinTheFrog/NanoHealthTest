@@ -27,7 +27,7 @@ class ProductsViewModel: ViewModel() {
         }
     }
 
-    fun getProduct(productId: Long): DomainProduct {
+    fun getProduct(productId: Int): DomainProduct {
         val productList = uiState.value?.productList ?: throw NotFoundException("Product list doesn't exist")
         for (product in productList) {
             if (product.id == productId) return product

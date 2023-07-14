@@ -1,29 +1,35 @@
 package com.example.nanohealthtest.api
 
 import com.example.nanohealthtest.model.data.DataProduct
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import org.json.JSONArray
 import org.json.JSONObject
+import org.jsoup.Jsoup
 
 object ProductsApi {
-    suspend fun getProducts(): List<DataProduct> {
+    suspend fun getProducts(): List<DataProduct> = withContext(Dispatchers.IO) {
         val result = mutableListOf<DataProduct>()
-        val json = getProductsFromServer()
-        val jsonArray = json.getJSONArray("products")
+
+        val doc = Jsoup.connect("https://fakestoreapi.com/products").ignoreContentType(true).get()
+        val json = doc.select("body").html()
+        val jsonArray = JSONArray(json)
         for (ind in 0 until jsonArray.length()) {
             val jsonObject = jsonArray.optJSONObject(ind)
             val product = convertJsonToProduct(jsonObject)
             result.add(product)
         }
-        return result
+        return@withContext result
     }
 
     private fun convertJsonToProduct(jsonObject: JSONObject): DataProduct = DataProduct(
-        id = jsonObject.getLong("id"),
-        name = jsonObject.getString("name"),
+        id = jsonObject.getInt("id"),
+        name = jsonObject.getString("title"),
         description = jsonObject.getString("description").toString(),
-        price = jsonObject.getInt("price"),
-        reviewsAmount = jsonObject.getInt("reviewsAmount"),
-        rating = jsonObject.getInt("rating"),
-        imageUrl = jsonObject.getString("imageUrl")
+        price = jsonObject.getString("price").toFloat(),
+        reviewsAmount = jsonObject.getJSONObject("rating").getInt("count"),
+        rating = jsonObject.getJSONObject("rating").getString("rate").toFloat(),
+        imageUrl = jsonObject.getString("image")
     )
 
     suspend private fun getProductsFromServer(): JSONObject {

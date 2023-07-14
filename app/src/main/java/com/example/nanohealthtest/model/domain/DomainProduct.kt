@@ -3,12 +3,11 @@ package com.example.nanohealthtest.model.domain
 import android.graphics.Bitmap
 
 data class DomainProduct(
-    val id: Long,
+    val id: Int,
     val name: String,
     val description: String,
-    val price: Int,
+    val price: Float,
     val reviewsAmount: Int,
-    val rating: Int,
-    val image: Bitmap?,
-    val largeImage: Bitmap?
+    val rating: Float,
+    val image: Bitmap?
 )

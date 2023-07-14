@@ -40,14 +40,12 @@ class DetailsFragment: Fragment() {
     }
 
     private fun setProductData(binding: FragmentDetailsBinding, product: DomainProduct) {
-        binding.productImage.background = BitmapDrawable(resources, product.largeImage)
+        binding.productImage.background = BitmapDrawable(resources, product.image)
         binding.productNameText.text = product.name
-        val priceInAED: Float = product.price / 100.0f
-        binding.priceText.text = resources.getString(R.string.price_in_aed, priceInAED)
+        binding.priceText.text = resources.getString(R.string.price_in_aed, product.price)
         binding.reviewsNumberText.text = resources.getString(R.string.reviews_number, product.reviewsAmount)
-        val rangedRating: Float = product.rating / 100.0f
-        binding.ratingText.text = "$rangedRating"
-        binding.ratingBar.rating = rangedRating
+        binding.ratingText.text = "${product.rating}"
+        binding.ratingBar.rating = product.rating
     }
 
     private fun setArrowBehavior(binding: FragmentDetailsBinding) {

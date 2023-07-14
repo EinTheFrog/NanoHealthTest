@@ -51,7 +51,7 @@ class ProductsFragment: Fragment() {
         }
     }
 
-    private fun navigateToProductDetails(productId: Long) {
+    private fun navigateToProductDetails(productId: Int) {
         val navController = findNavController()
         val action = ProductsFragmentDirections.actionProductsFragmentToDetailsFragment(productId)
         navController.navigate(action)

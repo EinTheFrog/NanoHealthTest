@@ -15,7 +15,7 @@ import com.example.nanohealthtest.model.domain.DomainProduct
 class ProductsAdapter(
     private val productList: List<DomainProduct>,
     private val resources: Resources,
-    private val onProductClick: (Long) -> Unit
+    private val onProductClick: (Int) -> Unit
 ): RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -48,10 +48,8 @@ class ProductsAdapter(
 
         holder.nameView.text = product.name
         holder.descriptionView.text = product.description
-        val priceInAED: Float = product.price / 100.0f
-        holder.priceView.text = resources.getString(R.string.price_in_aed, priceInAED)
-        val rangedRating: Float = product.rating / 100.0f
-        holder.ratingView.rating = rangedRating
+        holder.priceView.text = resources.getString(R.string.price_in_aed, product.price)
+        holder.ratingView.rating = product.rating
         holder.imageView.background = BitmapDrawable(resources, product.image)
 
         holder.clickView.setOnClickListener {

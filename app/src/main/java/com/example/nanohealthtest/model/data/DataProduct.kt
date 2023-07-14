@@ -1,11 +1,11 @@
 package com.example.nanohealthtest.model.data
 
 data class DataProduct(
-    val id: Long,
+    val id: Int,
     val name: String,
     val description: String,
-    val price: Int,
+    val price: Float,
     val reviewsAmount: Int,
-    val rating: Int,
+    val rating: Float,
     val imageUrl: String
 )
