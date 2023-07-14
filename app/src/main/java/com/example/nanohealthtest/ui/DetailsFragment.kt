@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.nanohealthtest.databinding.FragmentDetailsBinding
 import com.example.nanohealthtest.ui.viewmodel.ProductsViewModel
@@ -40,6 +41,10 @@ class DetailsFragment: Fragment() {
         binding.scrollView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
             Log.d("MyTag", "scrollY: $scrollY, oldScrollY: $oldScrollY")
             binding.arrowImage.rotation = min(scrollY.toFloat(), 180f)
+        }
+
+        binding.backButton.setOnClickListener {
+            findNavController().popBackStack()
         }
 
         return binding.root

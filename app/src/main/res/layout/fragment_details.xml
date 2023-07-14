@@ -5,6 +5,42 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 android:layout_width="match_parent"
 android:layout_height="match_parent">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="?attr/backgroundColor"
+        android:contentDescription="@string/back_button"
+        android:gravity="center"
+        android:minWidth="0dp"
+        app:icon="@drawable/baseline_arrow_back_24"
+        app:iconPadding="0dp"
+        app:iconSize="36dp"
+        app:iconTint="?attr/colorOnBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/more_button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="?attr/backgroundColor"
+        android:contentDescription="@string/more_button"
+        android:gravity="center"
+        android:minWidth="0dp"
+        app:icon="@drawable/baseline_more_vert_24"
+        app:iconPadding="0dp"
+        app:iconSize="36dp"
+        app:iconTint="?attr/colorOnBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded" />
+
     <ImageView
         android:id="@+id/product_image"
         android:background="@drawable/ic_launcher_background"
@@ -18,8 +54,12 @@ android:layout_height="match_parent">
 
     <ScrollView
         android:id="@+id/scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -37,7 +77,7 @@ android:layout_height="match_parent">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/details_background"
-                style="@style/Widget.NanoHealthTest.CardViewCut"
+                style="@style/Widget.NanoHealthTest.CardViewRoundTop"
                 app:strokeWidth="0dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -62,25 +102,23 @@ android:layout_height="match_parent">
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/share_button"
-                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
                         android:backgroundTint="?attr/backgroundColor"
-                        android:elevation="24dp"
+                        android:contentDescription="@string/share_button"
+                        android:gravity="center"
+                        android:minWidth="0dp"
                         app:icon="@drawable/baseline_ios_share_24"
+                        app:iconPadding="0dp"
                         app:iconSize="36dp"
                         app:iconTint="?attr/colorPrimary"
-                        app:iconPadding="0dp"
-                        android:layout_width="wrap_content"
-                        android:minWidth="0dp"
-                        android:layout_height="0dp"
-                        app:layout_constraintDimensionRatio="W,1:1"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="8dp"
-                        android:gravity="center"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toStartOf="@id/order_button"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/arrow_image"
-                        app:layout_constraintEnd_toStartOf="@id/order_button"
-                        android:contentDescription="@string/share_button" />
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded" />
 
                     <Button
                         android:id="@+id/order_button"
