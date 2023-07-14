@@ -7,6 +7,10 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="Widget.NanoHealthTest.TopBarButton" parent="Widget.NanoHealthTest.Button">
+        <item name="rippleColor">@color/grey</item>
+    </style>
+
     <style name="ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">24dp</item>

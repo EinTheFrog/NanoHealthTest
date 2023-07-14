@@ -15,7 +15,7 @@
         android:theme="@style/Theme.NanoHealthTest"
         tools:targetApi="31">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.LoginActivity"
             android:exported="true"
             android:noHistory="true">
             <intent-filter>
@@ -24,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.MainActivity" />
     </application>
 
 </manifest>

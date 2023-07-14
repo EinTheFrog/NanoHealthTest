@@ -7,6 +7,7 @@ android:layout_height="match_parent">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/back_button"
+        style="@style/Widget.NanoHealthTest.TopBarButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_margin="20dp"
@@ -25,6 +26,7 @@ android:layout_height="match_parent">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/more_button"
+        style="@style/Widget.NanoHealthTest.TopBarButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_margin="20dp"
