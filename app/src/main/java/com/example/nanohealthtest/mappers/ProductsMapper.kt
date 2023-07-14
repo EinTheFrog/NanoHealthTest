@@ -15,7 +15,7 @@ import kotlin.coroutines.resumeWithException
 
 object ProductsMapper {
     suspend fun dataToDomain(dataProduct: DataProduct): DomainProduct = withContext(Dispatchers.Main) {
-        val imageBitmap = loadImage(dataProduct.imageUrl, 720, 720)
+        val imageBitmap = loadImage(dataProduct.imageUrl)
         return@withContext DomainProduct(
             id = dataProduct.id,
             name = dataProduct.name,
@@ -28,7 +28,7 @@ object ProductsMapper {
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
-    suspend fun loadImage(imageUrl: String, targetWidth: Int, targetHeight: Int): Bitmap? = suspendCancellableCoroutine { continuation ->
+    suspend fun loadImage(imageUrl: String): Bitmap? = suspendCancellableCoroutine { continuation ->
         val target = object: Target {
             override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
                 continuation.resume(bitmap) {}
@@ -41,6 +41,6 @@ object ProductsMapper {
             override fun onPrepareLoad(placeHolderDrawable: Drawable?) {}
         }
 
-        Picasso.get().load(imageUrl).resize(targetWidth, targetHeight).centerCrop().into(target)
+        Picasso.get().load(imageUrl).into(target)
     }
 }

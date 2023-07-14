@@ -2,6 +2,7 @@ package com.example.nanohealthtest.ui
 
 import android.opengl.Visibility
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,6 +45,7 @@ class ProductsFragment: Fragment() {
     ) {
         productsViewModel.uiState.observe(viewLifecycleOwner) { newUiState ->
             binding.progressBar.visibility = if (newUiState.isLoading) View.VISIBLE else View.GONE
+            binding.productsRecycler.visibility = if (newUiState.isLoading) View.INVISIBLE else View.VISIBLE
             if (productList == newUiState.productList) return@observe
             productList.clear()
             productList.addAll(newUiState.productList)
