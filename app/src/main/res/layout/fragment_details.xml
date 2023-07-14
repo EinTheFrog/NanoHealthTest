@@ -53,6 +53,17 @@ android:layout_height="match_parent">
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/product_image" />
 
+    <TextView
+        android:id="@+id/details_title_text"
+        android:text="@string/details"
+        android:textAppearance="?attr/textAppearanceHeadline1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_button" />
+
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="0dp"
@@ -89,7 +100,9 @@ android:layout_height="match_parent">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="40dp">
+                    android:paddingBottom="40dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
 
                     <ImageView
                         android:id="@+id/arrow_image"
@@ -153,7 +166,6 @@ android:layout_height="match_parent">
                         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="8dp"
@@ -165,7 +177,7 @@ android:layout_height="match_parent">
                         android:id="@+id/rating_background"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
+                        android:layout_marginTop="20dp"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="0dp"
                         app:layout_constraintStart_toStartOf="parent"
