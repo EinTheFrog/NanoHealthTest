@@ -9,5 +9,5 @@ data class DomainProduct(
     val price: Float,
     val reviewsAmount: Int,
     val rating: Float,
-    val image: Bitmap?
+    val imageUrl: String
 )

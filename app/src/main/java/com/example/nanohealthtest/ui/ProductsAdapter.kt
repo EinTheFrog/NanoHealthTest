@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nanohealthtest.R
 import com.example.nanohealthtest.model.domain.DomainProduct
+import com.squareup.picasso.Picasso
 
 class ProductsAdapter(
     private val productList: List<DomainProduct>,
@@ -50,7 +51,7 @@ class ProductsAdapter(
         holder.descriptionView.text = product.description
         holder.priceView.text = resources.getString(R.string.price_in_aed, product.price)
         holder.ratingView.rating = product.rating
-        holder.imageView.background = BitmapDrawable(resources, product.image)
+        Picasso.get().load(product.imageUrl).fit().centerCrop().into(holder.imageView)
 
         holder.clickView.setOnClickListener {
             onProductClick(product.id)

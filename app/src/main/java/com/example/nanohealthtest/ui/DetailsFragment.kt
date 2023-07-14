@@ -14,6 +14,7 @@ import com.example.nanohealthtest.R
 import com.example.nanohealthtest.databinding.FragmentDetailsBinding
 import com.example.nanohealthtest.model.domain.DomainProduct
 import com.example.nanohealthtest.ui.viewmodel.ProductsViewModel
+import com.squareup.picasso.Picasso
 import java.lang.Float.min
 
 class DetailsFragment: Fragment() {
@@ -40,7 +41,7 @@ class DetailsFragment: Fragment() {
     }
 
     private fun setProductData(binding: FragmentDetailsBinding, product: DomainProduct) {
-        binding.productImage.background = BitmapDrawable(resources, product.image)
+        Picasso.get().load(product.imageUrl).fit().centerCrop().into(binding.productImage)
         binding.productNameText.text = product.name
         binding.priceText.text = resources.getString(R.string.price_in_aed, product.price)
         binding.reviewsNumberText.text = resources.getString(R.string.reviews_number, product.reviewsAmount)

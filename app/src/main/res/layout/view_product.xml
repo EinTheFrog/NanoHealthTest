@@ -17,7 +17,6 @@
         app:layout_constraintEnd_toEndOf="parent">
         <ImageView
             android:id="@+id/product_image"
-            android:background="@drawable/ic_launcher_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
