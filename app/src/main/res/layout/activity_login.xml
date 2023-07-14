@@ -6,9 +6,9 @@
 
     <ImageView
         android:id="@+id/login_image"
+        android:background="@drawable/login_background"
         android:layout_width="0dp"
-        android:layout_height="411dp"
-        android:background="@drawable/ic_launcher_background"
+        android:layout_height="380dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -16,10 +16,12 @@
     <TextView
         android:id="@+id/login_text"
         android:text="@string/log_in"
+        android:textAppearance="?attr/textAppearanceHeadline1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="@id/login_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -27,11 +29,12 @@
     <TextView
         android:id="@+id/email_text"
         android:text="@string/email"
+        android:textAppearance="?attr/textAppearanceBody1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="36dp"
-        app:layout_constraintBottom_toTopOf="@id/password_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_image"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -51,9 +54,11 @@
     <TextView
         android:id="@+id/password_text"
         android:text="@string/password"
+        android:textAppearance="?attr/textAppearanceBody1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="36dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email_input"
@@ -71,11 +76,15 @@
         app:layout_constraintTop_toBottomOf="@id/password_text"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/continue_button"
         android:text="@string/continue_button"
-        android:layout_width="wrap_content"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@id/help_link"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_input"
@@ -84,6 +93,7 @@
     <TextView
         android:id="@+id/help_link"
         android:text="@string/help_link"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

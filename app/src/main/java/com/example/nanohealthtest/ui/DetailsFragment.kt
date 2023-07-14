@@ -34,7 +34,7 @@ class DetailsFragment: Fragment() {
         binding.priceText.text = "$priceInAED AED"
         binding.reviewsNumberText.text = "Reviews (${product.reviewsAmount})"
         val rangedRating: Double = product.rating / 100.0
-        binding.ratingText.text = "$rangedRating/5.0"
+        binding.ratingText.text = "$rangedRating"
 
         return binding.root
     }

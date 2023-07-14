@@ -46,8 +46,12 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/share_button"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded"
+                    android:backgroundTint="?attr/backgroundColor"
+                    android:elevation="24dp"
                     app:icon="@drawable/baseline_ios_share_24"
                     app:iconSize="36dp"
+                    app:iconTint="?attr/colorPrimary"
                     app:iconPadding="0dp"
                     android:layout_width="wrap_content"
                     android:minWidth="0dp"
@@ -64,6 +68,7 @@
 
                 <Button
                     android:id="@+id/order_button"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginStart="8dp"
