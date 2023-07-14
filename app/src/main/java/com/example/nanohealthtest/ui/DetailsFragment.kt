@@ -2,15 +2,16 @@ package com.example.nanohealthtest.ui
 
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import com.example.nanohealthtest.databinding.FragmentDetailsBinding
 import com.example.nanohealthtest.ui.viewmodel.ProductsViewModel
+import java.lang.Float.min
 
 class DetailsFragment: Fragment() {
 
@@ -35,6 +36,11 @@ class DetailsFragment: Fragment() {
         binding.reviewsNumberText.text = "Reviews (${product.reviewsAmount})"
         val rangedRating: Double = product.rating / 100.0
         binding.ratingText.text = "$rangedRating"
+
+        binding.scrollView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+            Log.d("MyTag", "scrollY: $scrollY, oldScrollY: $oldScrollY")
+            binding.arrowImage.rotation = min(scrollY.toFloat(), 180f)
+        }
 
         return binding.root
     }

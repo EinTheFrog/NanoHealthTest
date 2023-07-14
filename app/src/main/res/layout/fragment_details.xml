@@ -1,151 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:background="@drawable/ic_launcher_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/product_image" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/product_image"
-            android:background="@drawable/ic_launcher_background"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/product_image" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/price_text"
-            android:text="0000 AED"
-            android:textAppearance="?attr/textAppearanceHeadline2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            app:layout_constraintBottom_toBottomOf="@id/product_image"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/details_background"
-            style="@style/Widget.NanoHealthTest.CardViewCut"
-            app:strokeWidth="0dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="640dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/price_text"
+                android:text="0000 AED"
+                android:textAppearance="?attr/textAppearanceHeadline2"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingBottom="40dp">
+                android:layout_margin="8dp"
+                app:layout_constraintBottom_toTopOf="@id/details_background"
+                app:layout_constraintStart_toStartOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/share_button"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded"
-                    android:backgroundTint="?attr/backgroundColor"
-                    android:elevation="24dp"
-                    app:icon="@drawable/baseline_ios_share_24"
-                    app:iconSize="36dp"
-                    app:iconTint="?attr/colorPrimary"
-                    app:iconPadding="0dp"
-                    android:layout_width="wrap_content"
-                    android:minWidth="0dp"
-                    android:layout_height="0dp"
-                    app:layout_constraintDimensionRatio="W,1:1"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="8dp"
-                    android:gravity="center"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/order_button"
-                    android:contentDescription="@string/share_button" />
-
-                <Button
-                    android:id="@+id/order_button"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="@string/order_button"
-                    app:layout_constraintBottom_toBottomOf="@id/share_button"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/share_button"
-                    app:layout_constraintTop_toTopOf="@id/share_button" />
-
-                <TextView
-                    android:id="@+id/product_name_text"
-                    android:text="product name"
-                    android:textAppearance="?attr/textAppearanceHeadline4"
-                    android:layout_width="0dp"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/details_background"
+                style="@style/Widget.NanoHealthTest.CardViewCut"
+                app:strokeWidth="0dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="640dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/share_button"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    android:paddingBottom="40dp">
 
-                <TextView
-                    android:id="@+id/product_description_text"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/product_name_text"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    <ImageView
+                        android:id="@+id/arrow_image"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/baseline_keyboard_arrow_up_24"
+                        app:tint="?attr/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/rating_background"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/product_description_text"
-                    app:layout_constraintEnd_toEndOf="parent">
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:background="@color/sand"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/share_button"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded"
+                        android:backgroundTint="?attr/backgroundColor"
+                        android:elevation="24dp"
+                        app:icon="@drawable/baseline_ios_share_24"
+                        app:iconSize="36dp"
+                        app:iconTint="?attr/colorPrimary"
+                        app:iconPadding="0dp"
+                        android:layout_width="wrap_content"
+                        android:minWidth="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintDimensionRatio="W,1:1"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:gravity="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/arrow_image"
+                        app:layout_constraintEnd_toStartOf="@id/order_button"
+                        android:contentDescription="@string/share_button" />
+
+                    <Button
+                        android:id="@+id/order_button"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.NanoHealthTest.Button.Rounded"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/order_button"
+                        app:layout_constraintBottom_toBottomOf="@id/share_button"
+                        app:layout_constraintStart_toEndOf="@id/share_button"
+                        app:layout_constraintTop_toBottomOf="@id/arrow_image"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/product_name_text"
+                        android:text="product name"
+                        android:textAppearance="?attr/textAppearanceHeadline4"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:padding="8dp">
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/share_button"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-                        <TextView
-                            android:id="@+id/reviews_number_text"
-                            android:text="Number of reviews"
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/product_description_text"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/product_name_text"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/rating_background"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/product_description_text"
+                        app:layout_constraintEnd_toEndOf="parent">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:background="@color/sand"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            android:padding="8dp">
 
-                        <TextView
-                            android:id="@+id/rating_text"
-                            android:text="5.0/5.0"
-                            android:textAppearance="?attr/textAppearanceHeadline2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/reviews_number_text" />
+                            <TextView
+                                android:id="@+id/reviews_number_text"
+                                android:text="Number of reviews"
+                                android:textAppearance="?attr/textAppearanceBody2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:id="@+id/rating_text"
+                                android:text="5.0/5.0"
+                                android:textAppearance="?attr/textAppearanceHeadline2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/reviews_number_text" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
