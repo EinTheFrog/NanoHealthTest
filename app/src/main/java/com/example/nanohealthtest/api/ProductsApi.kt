@@ -10,6 +10,7 @@ object ProductsApi {
                 "Shoes",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
                 39999,
+                110,
                 420,
                 "https://fabram.com/wp-content/uploads/2021/06/Luxury-Sneakers-cleaning-in-Dubai.jpg"
             ),
@@ -18,6 +19,7 @@ object ProductsApi {
                 "T-Shirt",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
                 2999,
+                2403,
                 431,
                 "https://c1.wallpaperflare.com/preview/414/396/979/person-outdoor-pad-brace.jpg"
             ),
@@ -26,6 +28,7 @@ object ProductsApi {
                 "Hat",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
                 1299,
+                1830,
                 499,
                 "https://foxerz.com/wp-content/uploads/2023/02/Dubai1_8db3d575-43d3-4481-b433-896a3a32c890.png"
             )

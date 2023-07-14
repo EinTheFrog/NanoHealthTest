@@ -7,6 +7,21 @@
     <fragment
         android:id="@+id/productsFragment"
         android:name="com.example.nanohealthtest.ui.ProductsFragment"
-        android:label="@string/products" />
+        android:label="@string/products">
+        <action
+            android:id="@+id/action_productsFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.nanohealthtest.ui.DetailsFragment"
+        android:label="@string/details">
+        <argument
+            android:name="productId"
+            app:argType="long" />
+    </fragment>
 
 </navigation>

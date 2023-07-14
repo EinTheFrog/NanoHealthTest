@@ -7,6 +7,8 @@ data class DomainProduct(
     val name: String,
     val description: String,
     val price: Int,
+    val reviewsAmount: Int,
     val rating: Int,
-    val image: Bitmap?
+    val image: Bitmap?,
+    val largeImage: Bitmap?
 )

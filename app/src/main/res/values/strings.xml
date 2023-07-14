@@ -6,4 +6,6 @@
     <string name="continue_button">continue</string>
     <string name="help_link">Need help?</string>
     <string name="products">Products</string>
+    <string name="details">Details</string>
+    <string name="order_button">Order Now</string>
 </resources>

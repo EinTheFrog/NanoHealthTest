@@ -5,6 +5,7 @@ data class DataProduct(
     val name: String,
     val description: String,
     val price: Int,
+    val reviewsAmount: Int,
     val rating: Int,
     val imageUrl: String
 )

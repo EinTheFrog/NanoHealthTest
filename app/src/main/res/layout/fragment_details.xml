@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/product_image"
+            android:background="@drawable/ic_launcher_background"
+            android:layout_width="0dp"
+            android:layout_height="640dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/price_text"
+            android:text="0000 AED"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/product_image"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/details_background"
+            android:background="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="640dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/share_button"
+            android:text="share"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="@id/details_background"
+            app:layout_constraintTop_toTopOf="@id/details_background"
+            app:layout_constraintEnd_toStartOf="@id/order_button" />
+
+        <Button
+            android:id="@+id/order_button"
+            android:text="@string/order_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toEndOf="@id/share_button"
+            app:layout_constraintTop_toTopOf="@id/details_background"
+            app:layout_constraintEnd_toEndOf="@id/details_background" />
+
+        <TextView
+            android:id="@+id/product_name_text"
+            android:text="product name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/share_button"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/product_description_text"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_name_text"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/rating_background"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="@color/material_on_primary_emphasis_high_type"
+            app:layout_constraintStart_toStartOf="@id/details_background"
+            app:layout_constraintTop_toBottomOf="@id/product_description_text"
+            app:layout_constraintEnd_toEndOf="@id/details_background"/>
+
+        <TextView
+            android:id="@+id/reviews_number_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="@id/rating_background"
+            app:layout_constraintTop_toTopOf="@id/rating_background"
+            />
+
+        <TextView
+            android:id="@+id/rating_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="@id/rating_background"
+            app:layout_constraintTop_toBottomOf="@id/reviews_number_text"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

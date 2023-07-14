@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.nanohealthtest.R
 import com.example.nanohealthtest.databinding.FragmentProductsBinding
 import com.example.nanohealthtest.model.domain.DomainProduct
 import com.example.nanohealthtest.ui.viewmodel.ProductsViewModel
@@ -21,8 +23,13 @@ class ProductsFragment: Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         val binding = FragmentProductsBinding.inflate(inflater)
 
+        val navController = findNavController()
+
         val dataProducts = mutableListOf<DomainProduct>()
-        val productsAdapter = ProductsAdapter(dataProducts)
+        val productsAdapter = ProductsAdapter(dataProducts) { productId ->
+            val action = ProductsFragmentDirections.actionProductsFragmentToDetailsFragment(productId)
+            navController.navigate(action)
+        }
         binding.productsRecycler.adapter = productsAdapter
         binding.productsRecycler.layoutManager = LinearLayoutManager(activity)
 
@@ -30,7 +37,7 @@ class ProductsFragment: Fragment() {
         productsViewModel.fetchData()
         productsViewModel.uiState.observe(viewLifecycleOwner) { newUiState ->
             dataProducts.clear()
-            dataProducts.addAll(newUiState.domainProducts)
+            dataProducts.addAll(newUiState.productList)
             productsAdapter.notifyDataSetChanged()
         }
 
