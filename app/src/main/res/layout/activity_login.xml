@@ -51,6 +51,30 @@
         app:layout_constraintTop_toBottomOf="@id/email_text"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <ImageView
+        android:id="@+id/login_successful_icon"
+        android:src="@drawable/baseline_check_circle_outline_24"
+        android:visibility="visible"
+        app:tint="?attr/colorPrimary"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/email_input"
+        app:layout_constraintTop_toTopOf="@id/email_input"
+        app:layout_constraintEnd_toEndOf="@id/email_input"/>
+
+    <ImageView
+        android:id="@+id/login_failed_icon"
+        android:src="@drawable/baseline_remove_circle_outline_24"
+        android:visibility="invisible"
+        app:tint="?attr/colorError"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/email_input"
+        app:layout_constraintTop_toTopOf="@id/email_input"
+        app:layout_constraintEnd_toEndOf="@id/email_input"/>
+
     <TextView
         android:id="@+id/password_text"
         android:text="@string/password"
@@ -75,6 +99,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_text"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/password_show_icon"
+        android:src="@drawable/baseline_remove_red_eye_24"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/password_input"
+        app:layout_constraintTop_toTopOf="@id/password_input"
+        app:layout_constraintEnd_toEndOf="@id/password_input"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/continue_button"
