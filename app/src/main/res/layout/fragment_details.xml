@@ -189,13 +189,27 @@ android:layout_height="match_parent">
 
                             <TextView
                                 android:id="@+id/rating_text"
-                                android:text="5.0/5.0"
+                                android:text="5.0"
                                 android:textAppearance="?attr/textAppearanceHeadline2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="8dp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@id/reviews_number_text" />
+
+                            <RatingBar
+                                android:id="@+id/rating_bar"
+                                style="?android:attr/ratingBarStyleIndicator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:theme="@style/Widget.NanoHealthTest.RatingBar"
+                                android:layout_marginEnd="16dp"
+                                android:numStars="5"
+                                android:stepSize="0.1"
+                                android:isIndicator="true"
+                                app:layout_constraintBottom_toBottomOf="@id/rating_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/rating_text"/>
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>

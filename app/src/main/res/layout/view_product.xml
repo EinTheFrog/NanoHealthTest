@@ -33,6 +33,20 @@
         app:layout_constraintBottom_toBottomOf="@id/product_image_card"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <RatingBar
+        android:id="@+id/rating_bar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/Widget.NanoHealthTest.RatingBar"
+        android:layout_marginEnd="16dp"
+        android:numStars="5"
+        android:stepSize="0.1"
+        android:isIndicator="true"
+        app:layout_constraintBottom_toBottomOf="@id/price_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/price_text"/>
+
     <TextView
         android:id="@+id/product_name_text"
         android:text="product name"

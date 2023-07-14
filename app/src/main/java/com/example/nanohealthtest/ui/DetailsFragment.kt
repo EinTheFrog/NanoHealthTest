@@ -32,11 +32,12 @@ class DetailsFragment: Fragment() {
 
         binding.productImage.background = BitmapDrawable(resources, product.largeImage)
         binding.productNameText.text = product.name
-        val priceInAED: Double = product.price / 100.0
+        val priceInAED: Float = product.price / 100.0f
         binding.priceText.text = "$priceInAED AED"
         binding.reviewsNumberText.text = "Reviews (${product.reviewsAmount})"
-        val rangedRating: Double = product.rating / 100.0
+        val rangedRating: Float = product.rating / 100.0f
         binding.ratingText.text = "$rangedRating"
+        binding.ratingBar.rating = rangedRating
 
         binding.scrollView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
             binding.arrowImage.rotation = min(scrollY.toFloat(), 180f)

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nanohealthtest.R
@@ -21,6 +22,7 @@ class ProductsAdapter(
         val nameView: TextView
         val descriptionView: TextView
         val priceView: TextView
+        val ratingView: RatingBar
         val imageView: ImageView
         val clickView: ImageView
 
@@ -28,6 +30,7 @@ class ProductsAdapter(
             nameView = view.findViewById(R.id.product_name_text)
             descriptionView = view.findViewById(R.id.product_description_text)
             priceView = view.findViewById(R.id.price_text)
+            ratingView = view.findViewById(R.id.rating_bar)
             imageView = view.findViewById(R.id.product_image)
             clickView = view.findViewById(R.id.click_area_image)
         }
@@ -44,8 +47,10 @@ class ProductsAdapter(
         val product = productList[position]
         holder.nameView.text = product.name
         holder.descriptionView.text = product.description
-        val priceInAED: Double = product.price / 100.0
+        val priceInAED: Float = product.price / 100.0f
         holder.priceView.text = "$priceInAED AED"
+        val rangedRating: Float = product.rating / 100.0f
+        holder.ratingView.rating = rangedRating
         holder.imageView.background = BitmapDrawable(resources, product.image)
         holder.clickView.setOnClickListener {
             onProductClick(product.id)

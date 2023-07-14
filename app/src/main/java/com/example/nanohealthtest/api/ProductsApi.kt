@@ -36,7 +36,7 @@ object ProductsApi {
                         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
                         "price": 39999,
                         "reviewsAmount": 110,
-                        "rating": 420,
+                        "rating": 380,
                         "imageUrl": "https://fabram.com/wp-content/uploads/2021/06/Luxury-Sneakers-cleaning-in-Dubai.jpg"
                     },
                     {
