@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.nanohealthtest.model.domain.DomainProduct
-import com.example.nanohealthtest.usecases.ProductsUseCase
+import com.example.nanohealthtest.usecases.ShopUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -16,13 +16,13 @@ class ProductsViewModel: ViewModel() {
         val isLoading: Boolean
     )
 
-    private val _uiState = MutableLiveData(UiState(emptyList(), true))
+    private val _uiState = MutableLiveData(UiState(emptyList(), false))
     val uiState: LiveData<UiState> = _uiState
 
     fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
             _uiState.postValue(_uiState.value?.copy(isLoading = true))
-            val newProducts = ProductsUseCase.fetchProducts()
+            val newProducts = ShopUseCase.fetchProducts()
             _uiState.postValue(_uiState.value?.copy(productList = newProducts, isLoading = false))
         }
     }

@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.nanohealthtest.databinding.ActivityLoginBinding
-import com.example.nanohealthtest.model.domain.LoginInfo
+import com.example.nanohealthtest.model.data.LoginData
 import com.example.nanohealthtest.ui.viewmodel.LoginViewModel
 
 class LoginActivity: AppCompatActivity() {
@@ -16,27 +16,29 @@ class LoginActivity: AppCompatActivity() {
 
         val loginViewModel by viewModels<LoginViewModel>()
 
-        setUiStateObserver(loginViewModel)
+        setUiStateObserver(binding, loginViewModel)
         setLoginButtonBehavior(binding, loginViewModel)
 
         setContentView(binding.root)
     }
 
-    private fun setUiStateObserver(loginViewModel: LoginViewModel) {
+    private fun setUiStateObserver(binding: ActivityLoginBinding, loginViewModel: LoginViewModel) {
         loginViewModel.uiState.observe(this) { newUiState ->
             if (newUiState.successfulLogin) {
                 val mainActivityIntent = Intent(this, MainActivity::class.java)
                 startActivity(mainActivityIntent)
+            } else {
+                binding.passwordInput.setText("")
             }
         }
     }
 
     private fun setLoginButtonBehavior(binding: ActivityLoginBinding, loginViewModel: LoginViewModel) {
         binding.continueButton.setOnClickListener {
-            val email = binding.emailInput.text.toString()
+            val username = binding.emailInput.text.toString()
             val password = binding.passwordInput.text.toString()
-            val loginInfo = LoginInfo(email, password)
-            loginViewModel.login(loginInfo)
+            val loginData = LoginData(username, password)
+            loginViewModel.login(loginData)
         }
     }
 }

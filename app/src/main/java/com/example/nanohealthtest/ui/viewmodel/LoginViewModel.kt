@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.nanohealthtest.model.domain.LoginInfo
-import com.example.nanohealthtest.usecases.UserUseCase
+import com.example.nanohealthtest.model.data.LoginData
+import com.example.nanohealthtest.usecases.ShopUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -17,9 +17,9 @@ class LoginViewModel: ViewModel() {
     private val _uiState = MutableLiveData(UiState(false))
     val uiState: LiveData<UiState> = _uiState
 
-    fun login(loginInfo: LoginInfo) {
+    fun login(loginData: LoginData) {
         viewModelScope.launch(Dispatchers.IO) {
-            val successfulLogin = UserUseCase.login(loginInfo)
+            val successfulLogin = ShopUseCase.login(loginData)
             _uiState.postValue(_uiState.value?.copy(successfulLogin = successfulLogin))
         }
     }

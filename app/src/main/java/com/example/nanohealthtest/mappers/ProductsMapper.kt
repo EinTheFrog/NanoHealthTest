@@ -16,14 +16,13 @@ import kotlin.coroutines.resumeWithException
 object ProductsMapper {
     suspend fun dataToDomain(dataProduct: DataProduct): DomainProduct = withContext(Dispatchers.Main) {
         val imageBitmap = loadImage(dataProduct.imageUrl, 720, 720)
-        //val largeImageBitmap = loadImage(dataProduct.imageUrl, 440, 800)
         return@withContext DomainProduct(
             id = dataProduct.id,
             name = dataProduct.name,
             description = dataProduct.description,
             price = dataProduct.price,
-            reviewsAmount = dataProduct.reviewsAmount,
-            rating = dataProduct.rating,
+            reviewsAmount = dataProduct.rating.count,
+            rating = dataProduct.rating.rate,
             image = imageBitmap
         )
     }
