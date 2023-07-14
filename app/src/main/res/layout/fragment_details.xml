@@ -7,7 +7,7 @@ android:layout_height="match_parent">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/back_button"
-        style="@style/Widget.NanoHealthTest.TopBarButton"
+        style="@style/Widget.NanoHealthTest.LightButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_margin="20dp"
@@ -26,7 +26,7 @@ android:layout_height="match_parent">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/more_button"
-        style="@style/Widget.NanoHealthTest.TopBarButton"
+        style="@style/Widget.NanoHealthTest.LightButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_margin="20dp"
@@ -83,7 +83,7 @@ android:layout_height="match_parent">
                 app:strokeWidth="0dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="640dp"
+                android:layout_marginTop="520dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
@@ -104,6 +104,7 @@ android:layout_height="match_parent">
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/share_button"
+                        style="@style/Widget.NanoHealthTest.LightButton"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_marginStart="8dp"

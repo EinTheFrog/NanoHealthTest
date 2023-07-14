@@ -12,7 +12,7 @@
         <item name="colorControlActivated">@color/yellow</item>
     </style>
 
-    <style name="Widget.NanoHealthTest.TopBarButton" parent="Widget.NanoHealthTest.Button">
+    <style name="Widget.NanoHealthTest.LightButton" parent="Widget.NanoHealthTest.Button">
         <item name="rippleColor">@color/grey</item>
     </style>
 

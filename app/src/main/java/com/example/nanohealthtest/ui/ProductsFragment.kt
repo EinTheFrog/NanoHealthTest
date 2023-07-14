@@ -1,5 +1,6 @@
 package com.example.nanohealthtest.ui
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,26 +24,29 @@ class ProductsFragment: Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         val binding = FragmentProductsBinding.inflate(inflater)
 
-        val dataProducts = mutableListOf<DomainProduct>()
-        val productsAdapter = ProductsAdapter(dataProducts, resources, this::navigateToProductDetails)
+        val productList = mutableListOf<DomainProduct>()
+        val productsAdapter = ProductsAdapter(productList, resources, this::navigateToProductDetails)
         binding.productsRecycler.adapter = productsAdapter
         binding.productsRecycler.layoutManager = LinearLayoutManager(activity)
 
         val productsViewModel by activityViewModels<ProductsViewModel>()
         productsViewModel.fetchData()
-        setUiStateObserver(productsViewModel, dataProducts, productsAdapter)
+        setUiStateObserver(binding, productsViewModel, productList, productsAdapter)
 
         return binding.root
     }
 
     private fun setUiStateObserver(
+        binding: FragmentProductsBinding,
         productsViewModel: ProductsViewModel,
-        dataProducts: MutableList<DomainProduct>,
+        productList: MutableList<DomainProduct>,
         productsAdapter: ProductsAdapter
     ) {
         productsViewModel.uiState.observe(viewLifecycleOwner) { newUiState ->
-            dataProducts.clear()
-            dataProducts.addAll(newUiState.productList)
+            binding.progressBar.visibility = if (newUiState.isLoading) View.VISIBLE else View.GONE
+            if (productList == newUiState.productList) return@observe
+            productList.clear()
+            productList.addAll(newUiState.productList)
             productsAdapter.notifyDataSetChanged()
         }
     }

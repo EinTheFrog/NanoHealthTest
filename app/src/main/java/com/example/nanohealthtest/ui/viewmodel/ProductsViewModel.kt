@@ -12,16 +12,18 @@ import kotlinx.coroutines.launch
 
 class ProductsViewModel: ViewModel() {
     data class UiState(
-        val productList: List<DomainProduct>
+        val productList: List<DomainProduct>,
+        val isLoading: Boolean
     )
 
-    private val _uiState = MutableLiveData(UiState(emptyList()))
+    private val _uiState = MutableLiveData(UiState(emptyList(), true))
     val uiState: LiveData<UiState> = _uiState
 
     fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
+            _uiState.postValue(_uiState.value?.copy(isLoading = true))
             val newProducts = ProductsUseCase.fetchProducts()
-            _uiState.postValue(_uiState.value?.copy(productList = newProducts))
+            _uiState.postValue(_uiState.value?.copy(productList = newProducts, isLoading = false))
         }
     }
 
