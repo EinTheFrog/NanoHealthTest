@@ -39,7 +39,6 @@ class DetailsFragment: Fragment() {
         binding.ratingText.text = "$rangedRating"
 
         binding.scrollView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
-            Log.d("MyTag", "scrollY: $scrollY, oldScrollY: $oldScrollY")
             binding.arrowImage.rotation = min(scrollY.toFloat(), 180f)
         }
 
